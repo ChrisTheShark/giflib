@@ -1,6 +1,8 @@
 package com.dyer.frameworks.controllers;
 
 import com.dyer.frameworks.model.Gif;
+import com.dyer.frameworks.repository.GifRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,15 +17,17 @@ import java.time.LocalDate;
 @Controller
 public class GifController {
 
+    @Autowired
+    private GifRepository gifRepository;
+
     @RequestMapping("/")
     public String getLandingPage() {
         return "home";
     }
 
-    @RequestMapping("/gif")
-    public String getGif(ModelMap modelMap) {
-        Gif gif = new Gif("compiler-bot", LocalDate.of(2017, 01, 01), "cdyer", false);
-        modelMap.put("gif", gif);
+    @RequestMapping("/gif/{name}")
+    public String getGif(@PathVariable String name, ModelMap modelMap) {
+        modelMap.put("gif", gifRepository.findByName(name));
         return "gif-details";
     }
 
