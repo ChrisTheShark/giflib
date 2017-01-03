@@ -7,12 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.time.LocalDate;
 
 /**
- * Simple controller to handle requests for gifs.
+ * Simple controller to handle requests for {@link Gif}s.
  */
 @Controller
 public class GifController {
@@ -21,7 +18,8 @@ public class GifController {
     private GifRepository gifRepository;
 
     @RequestMapping("/")
-    public String getLandingPage() {
+    public String getLandingPage(ModelMap modelMap) {
+        modelMap.put("gifs", gifRepository.findAll());
         return "home";
     }
 
