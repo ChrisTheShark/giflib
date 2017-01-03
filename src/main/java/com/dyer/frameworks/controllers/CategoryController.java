@@ -24,7 +24,7 @@ public class CategoryController {
     @RequestMapping("/categories")
     public String getAllCategories(ModelMap modelMap) {
         modelMap.put("categories", categoryRepository.findAll());
-        return "categories";
+        return "category-list";
     }
 
     @RequestMapping("/category/{id}")
