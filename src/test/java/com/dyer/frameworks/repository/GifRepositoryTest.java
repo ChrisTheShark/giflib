@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.dyer.frameworks.repository;
 
 import com.dyer.frameworks.model.Gif;
@@ -8,11 +9,18 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+=======
+package com.dyer.frameworks.repository
+
+import org.junit.Test;
+
+>>>>>>> 0ae43c1d198540e20c27682843501d79b318c42f
 /**
  * Testing for {@link GifRepository}.
  */
 public class GifRepositoryTest {
 
+<<<<<<< HEAD
     private SimpleGifRepositoryImpl repository = new SimpleGifRepositoryImpl();
 
     @Test
@@ -40,6 +48,11 @@ public class GifRepositoryTest {
         List<Gif> gifs = repository.findAll();
         assertNotNull("Static list should not be null", gifs);
         assertEquals("Static list should have expected length.", 6, gifs.size());
+=======
+    @Test
+    public void testGetAllGifs() throws Exception {
+
+>>>>>>> 0ae43c1d198540e20c27682843501d79b318c42f
     }
 
 }
