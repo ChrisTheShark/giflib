@@ -1,7 +1,6 @@
 package com.dyer.frameworks.model;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**

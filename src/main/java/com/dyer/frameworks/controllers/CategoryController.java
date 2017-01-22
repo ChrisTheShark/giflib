@@ -3,8 +3,8 @@ package com.dyer.frameworks.controllers;
 import com.dyer.frameworks.model.Category;
 import com.dyer.frameworks.model.Color;
 import com.dyer.frameworks.model.FlashMessage;
-import com.dyer.frameworks.repository.GifRepository;
 import com.dyer.frameworks.service.CategoryService;
+import com.dyer.frameworks.service.GifService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,8 +29,8 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @Autowired(required = false)
-    private GifRepository gifRepository;
+    @Autowired
+    private GifService gifService;
 
     @RequestMapping(ADD_CATEGORY)
     public String formNewCategory(Model model) {
@@ -50,7 +50,7 @@ public class CategoryController {
     @RequestMapping("/category/{id}")
     public String getCategoryById(@PathVariable Long id, ModelMap modelMap) {
         modelMap.put("category", categoryService.getCategoryById(id));
-        modelMap.put("gifs", gifRepository.findByCategoryId(id));
+        //modelMap.put("gifs", gifRepository.findByCategoryId(id));
         return "category/details";
     }
 

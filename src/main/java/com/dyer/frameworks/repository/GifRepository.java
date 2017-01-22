@@ -1,6 +1,5 @@
 package com.dyer.frameworks.repository;
 
-import com.dyer.frameworks.model.Category;
 import com.dyer.frameworks.model.Gif;
 
 import java.util.List;
@@ -11,24 +10,29 @@ import java.util.List;
 public interface GifRepository {
 
     /**
-     * Locate a {@link Gif} object by <code>String</code> name.
-     * @param name the <code>String</code> name
-     * @return a located {@link Gif} object or <code>null</code>.
-     */
-    Gif findByName(String name);
-
-    /**
      * Find a {@link List} of {@link Gif}s by <code>Long</code>
-     * {@link Category} identifier.
-     * @param categoryId the <code>Long</code> {@link Category} identifier.
+     * identifier.
+     * @param identifier the <code>Long</code> identifier.
      * @return a located {@link Gif} object or an empty {@link List}.
      */
-    List<Gif> findByCategoryId(Long categoryId);
+    Gif findById(Long identifier);
 
     /**
      * Find all {@link Gif}s.
      * @return a located {@link List}
      */
     List<Gif> findAll();
+
+    /**
+     * Save a {@link Gif} object.
+     * @param gif the {@link Gif} object
+     */
+    void save(Gif gif);
+
+    /**
+     * Delete a {@link Gif} object.
+     * @param gif the {@link Gif} object
+     */
+    void delete(Gif gif);
 
 }
