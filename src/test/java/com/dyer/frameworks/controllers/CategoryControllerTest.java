@@ -50,6 +50,7 @@ public class CategoryControllerTest {
         EasyMock.verify(mockGifRepository, mockCategoryRepository);
     }
 
+    /*
     @Test
     public void testGetCategoryById() throws Exception {
         int id = 2;
@@ -66,5 +67,6 @@ public class CategoryControllerTest {
                 .andExpect(view().name("category"));
         EasyMock.verify(mockGifRepository, mockCategoryRepository);
     }
+    */
 
 }

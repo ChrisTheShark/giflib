@@ -14,19 +14,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class GifController {
 
-    @Autowired
+    @Autowired(required = false)
     private GifRepository gifRepository;
 
     @RequestMapping("/")
     public String getLandingPage(ModelMap modelMap) {
         modelMap.put("gifs", gifRepository.findAll());
-        return "home";
+        return "gif/index";
     }
 
     @RequestMapping("/gif/{name}")
     public String getGif(@PathVariable String name, ModelMap modelMap) {
         modelMap.put("gif", gifRepository.findByName(name));
-        return "gif-details";
+        return "gif/details";
     }
 
 }

@@ -18,12 +18,12 @@ public interface GifRepository {
     Gif findByName(String name);
 
     /**
-     * Find a {@link List} of {@link Gif}s by <code>int</code>
+     * Find a {@link List} of {@link Gif}s by <code>Long</code>
      * {@link Category} identifier.
-     * @param categoryId the <code>int</code> {@link Category} identifier.
+     * @param categoryId the <code>Long</code> {@link Category} identifier.
      * @return a located {@link Gif} object or an empty {@link List}.
      */
-    List<Gif> findByCategoryId(int categoryId);
+    List<Gif> findByCategoryId(Long categoryId);
 
     /**
      * Find all {@link Gif}s.

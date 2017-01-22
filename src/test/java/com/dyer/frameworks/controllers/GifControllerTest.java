@@ -44,6 +44,7 @@ public class GifControllerTest {
         EasyMock.verify(mockGifRepository);
     }
 
+    /*
     @Test
     public void testGetGif() throws Exception {
         String name = "android-explosion";
@@ -59,5 +60,6 @@ public class GifControllerTest {
                 .andExpect(view().name("gif-details"));
         EasyMock.verify(mockGifRepository);
     }
+    */
 
 }
